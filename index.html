@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title> Basic Login Form</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script>
+        $(document)-ready(function(){
+            var user,pass;
+            $("#submit").click(function(){
+                user=$("#user").val();
+                pass=$("#password").val();
+                // send form data using the post
+                $-post("http://localhost:3000/login",{user:user,password:pass},function(data){
+                    if(data==='done'){
+                        alert("login success");
+                    }
+                });
+            });
+        });
+        </script>
+        </head>
+        <body>
+            <h1>Hello Get Post Request!</h1>
+            <input type="text" id="user" size="40"><br>
+            <input type="password" id="password" size="40"><br>
+            <input type="button" id="submit" value="submit">
+        
+        </body>
+    </head>
+</html>
